@@ -12,7 +12,7 @@ jobs:
       - name: Clone the project
         uses: actions/checkout@v3
 
-      - name: Install the software (Setup Node.js example)
+      - name: Install the software 
         uses: actions/setup-node@v3
         with:
           node-version: '18'
