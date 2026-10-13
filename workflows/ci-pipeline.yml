@@ -1,0 +1,27 @@
+name: CI Pipeline
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone the project
+        uses: actions/checkout@v3
+
+      - name: Install the software 
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Download dependencies
+        run: npm install
+
+      - name: Create a project build
+        run: npm run build
+
+      - name: Run unit tests
+        run: npm test
